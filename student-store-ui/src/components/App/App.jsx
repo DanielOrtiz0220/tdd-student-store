@@ -24,7 +24,7 @@ export default function App() {
   return (
     <div className="app">
         <main>
-          <Navbar />
+          
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -32,8 +32,8 @@ export default function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
-          <Sidebar />
-          <Home />
+
+          
         </main>
       
     </div>
