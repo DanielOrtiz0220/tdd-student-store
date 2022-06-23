@@ -1,22 +1,22 @@
 import * as React from "react";
-import "./Home.css";
+import "./ProductCard.css";
 
-export default function ProductCard(
+export default function ProductCard({
   product,
   productId,
   quantity,
   handleAddItemToCart,
   handleRemoveItemToCart,
-  showDescription
-) {
+  showDescription,
+}) {
   return (
     <div className="product-card">
       <p className="product-name">Banana</p>
       <p className="product-price">${product.price}</p>
-      showDescription ? (
-      <p className="product-description">${product.description}</p>
-      ) : ()
-      <img class="product-image" src={product.img} alt={product.title} />
+      {showDescription ? (
+        <p className="product-description">{product.description}</p>
+      ) : null}
+      <img className="product-image" src={product.image} alt={product.title} />
     </div>
   );
 }
