@@ -14,7 +14,7 @@ export default function App() {
   const [products, setProducts] = useState([0]);
   const [isFetching, setIsFetching] = useState(0);
   const [error, setError] = useState("");
-  const [isOpen, setIsOpen] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(null);
   const [checkoutForm, setCheckoutForm] = useState(null);
 
@@ -43,7 +43,7 @@ export default function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home products={products} setProducts={setProducts} />}
+              element={<Home products={products} setProducts={setProducts} isOpen = {isOpen} setIsOpen = {setIsOpen} />}
             />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />

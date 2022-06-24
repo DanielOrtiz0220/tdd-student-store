@@ -11,7 +11,7 @@ export default function ProductCard({
 }) {
   return (
     <div className="product-card">
-      <p className="product-name">Banana</p>
+      <p className="product-name">{product.name}</p>
       <p className="product-price">${product.price}</p>
       {showDescription ? (
         <p className="product-description">{product.description}</p>
