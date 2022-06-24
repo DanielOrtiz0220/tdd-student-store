@@ -5,6 +5,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #F8F0E3;
 }
 .home .open-nav {
   display: flex;

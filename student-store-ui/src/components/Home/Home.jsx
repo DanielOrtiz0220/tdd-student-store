@@ -4,7 +4,14 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import ProductGrid from "../ProductGrid/ProductGrid";
 
-export default function Home({ products, setProducts, isOpen, setIsOpen }) {
+export default function Home({
+  products,
+  setProducts,
+  isOpen,
+  setIsOpen,
+  shoppingCart,
+  setShoppingCart,
+}) {
   // function handleClick() {
   //   setIsOpen(!isOpen);
   // }
@@ -13,7 +20,7 @@ export default function Home({ products, setProducts, isOpen, setIsOpen }) {
     <div className="home">
       <Navbar /> 
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <ProductGrid products={products} />
+      <ProductGrid products={products} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
       {/* <button
         className="open-nav"
         src="src/assets/icons8-menu-24.png"

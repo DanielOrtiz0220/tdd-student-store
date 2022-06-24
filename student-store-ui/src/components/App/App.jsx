@@ -9,6 +9,8 @@ import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ContactUs from "../ContactUs/ContactUs";
+import AboutUs from "../AboutUs/AboutUs";
 
 export default function App() {
   const [products, setProducts] = useState([0]);
@@ -43,9 +45,22 @@ export default function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home products={products} setProducts={setProducts} isOpen = {isOpen} setIsOpen = {setIsOpen} />}
+              element={
+                <Home
+                  products={products}
+                  setProducts={setProducts}
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  shoppingCart = {shoppingCart}
+                  setShoppingCart={setShoppingCart}
+                  
+                />
+              }
             />
+            <Route path="/contactus" element={<ContactUs isOpen={isOpen} setIsOpen={setIsOpen}/>} />
+            <Route path="/aboutus" element={<AboutUs isOpen={isOpen} setIsOpen={setIsOpen}/>} />
             <Route path="/products/:productId" element={<ProductDetail />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

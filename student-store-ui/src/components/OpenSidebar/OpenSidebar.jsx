@@ -90,7 +90,7 @@ export default function OpenSidebar({ isOpen, setIsOpen }) {
                   </span>
                 </h3>
                 <div className="content">
-                  <p>
+                  <p className = "open-sidebar-p">
                     A confirmation email will be sent to you so that you can
                     confirm this order. Once you have confirmed the order, it
                     will be delivered to your dorm room.
