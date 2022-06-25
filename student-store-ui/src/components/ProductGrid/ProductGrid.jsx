@@ -1,6 +1,7 @@
 import * as React from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductGrid.css";
+import { useEffect } from "react";
 
 export default function ProductGrid({
   products,
@@ -9,6 +10,9 @@ export default function ProductGrid({
   shoppingCart,
   setShoppingCart,
 }) {
+  useEffect(() => {
+    console.log(shoppingCart);
+  }, []);
   return (
     <div className="product-grid">
       {products.map((item, idx) => {
@@ -19,6 +23,7 @@ export default function ProductGrid({
             showDescription={true}
             shoppingCart={shoppingCart}
             setShoppingCart={setShoppingCart}
+            cardId={idx}
           />
         );
       })}

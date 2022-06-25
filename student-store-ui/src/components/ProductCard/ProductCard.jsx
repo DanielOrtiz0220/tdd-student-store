@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./ProductCard.css";
+import { useEffect } from "react";
 
 export default function ProductCard({
   product,
@@ -9,19 +10,21 @@ export default function ProductCard({
   setShoppingCart,
   handleRemoveItemToCart,
   showDescription,
-  key
+  cardId,
 }) {
+  useEffect(() => {
+    console.log(cardId);
+    console.log(shoppingCart[cardId]);
+  }, []);
+
   const handleAddClick = () => {
-    setShoppingCart((s) => s + 1);
+    setShoppingCart(shoppingCart[cardId] + 1);
   };
   const handleSubClick = () => {
-    setShoppingCart((s) => {
-      if (s <= 0) {
-        return 0;
-      } else {
-        return s - 1;
-      }
-    });
+    if (cardQuantity <= 0) {
+      return setShoppingCart(0);
+    }
+    return setShoppingCart(cardQuantity - 1);
   };
 
   return (
@@ -34,15 +37,23 @@ export default function ProductCard({
       ) : null}
 
       <div className="add-sub-btns">
-      <button className="subtract-item" onClick={handleSubClick}>
+        <button
+          className="subtract-item"
+          onClick={() => {
+            handleSubClick();
+          }}
+        >
           <i className="material-icons-md-48">➖</i>
         </button>
-        <p>{}</p>
-        <button className="add-item" onClick={handleAddClick}>
+        <p>0</p>
+        <button
+          className="add-item"
+          onClick={() => {
+            handleAddClick();
+          }}
+        >
           <i className="material-icons-md-48">➕</i>
         </button>
-
-
       </div>
     </div>
   );

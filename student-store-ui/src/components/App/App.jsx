@@ -17,7 +17,7 @@ export default function App() {
   const [isFetching, setIsFetching] = useState(0);
   const [error, setError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [shoppingCart, setShoppingCart] = useState(null);
+  const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState(null);
 
   useEffect(() => {
@@ -51,14 +51,19 @@ export default function App() {
                   setProducts={setProducts}
                   isOpen={isOpen}
                   setIsOpen={setIsOpen}
-                  shoppingCart = {shoppingCart}
+                  shoppingCart={shoppingCart}
                   setShoppingCart={setShoppingCart}
-                  
                 />
               }
             />
-            <Route path="/contactus" element={<ContactUs isOpen={isOpen} setIsOpen={setIsOpen}/>} />
-            <Route path="/aboutus" element={<AboutUs isOpen={isOpen} setIsOpen={setIsOpen}/>} />
+            <Route
+              path="/contactus"
+              element={<ContactUs isOpen={isOpen} setIsOpen={setIsOpen} />}
+            />
+            <Route
+              path="/aboutus"
+              element={<AboutUs isOpen={isOpen} setIsOpen={setIsOpen} />}
+            />
             <Route path="/products/:productId" element={<ProductDetail />} />
 
             <Route path="*" element={<NotFound />} />
