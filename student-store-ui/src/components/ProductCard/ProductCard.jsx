@@ -27,7 +27,7 @@ export default function ProductCard({
     return setShoppingCart(cardQuantity - 1);
   };
 
-  return (
+  return ( 
     <div className="product-card">
       <img className="product-image" src={product.image} alt={product.title} />
       <p className="product-name">{product.name}</p>
