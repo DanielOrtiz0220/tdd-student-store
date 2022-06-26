@@ -14,9 +14,6 @@ export default function Navbar() {
       <Link className="navs" id="about-us" to="/aboutus">
         About us
       </Link>
-      <Link className="navs" id="buy-now" to="/products/:productId">
-        Buy Now
-      </Link>
     </nav>
   );
 }

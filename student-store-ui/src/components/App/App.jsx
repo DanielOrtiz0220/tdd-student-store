@@ -38,6 +38,9 @@ export default function App() {
   //   console.log("after api " + products);
   // }, [])
 
+  
+
+
   return (
     <div className="app">
       <main>
@@ -64,7 +67,17 @@ export default function App() {
               path="/aboutus"
               element={<AboutUs isOpen={isOpen} setIsOpen={setIsOpen} />}
             />
-            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  products={products}
+                  setProducts={setProducts}
+                  shoppingCart={shoppingCart}
+                  setShoppingCart={setShoppingCart}
+                />
+              }
+            />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

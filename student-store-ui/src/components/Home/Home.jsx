@@ -29,15 +29,7 @@ export default function Home({
         shoppingCart={shoppingCart}
         setShoppingCart={setShoppingCart}
       />
-      {/* <button
-        className="open-nav"
-        src="src/assets/icons8-menu-24.png"
-        alt="menu icon"
-        onClick={handleClick}
-      >
-        menu
-      </button> */}
-      <p>Home</p>
+      <p>Footer</p>
     </div>
   );
 }

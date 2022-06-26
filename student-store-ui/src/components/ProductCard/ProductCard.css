@@ -13,6 +13,10 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   padding: 3px;
 }
+.product-details {
+  display: flex;
+  justify-content: center;
+}
 .product-image {
   max-height: 20vh;
   height: auto;
@@ -26,12 +30,11 @@ p {
   font-family: Gilroy;
 }
 
-.add-sub-btns{
+.add-sub-btns {
   display: flex;
   justify-content: space-around;
 }
-.material-icons{
-  
+.material-icons {
 }
 
 @font-face {

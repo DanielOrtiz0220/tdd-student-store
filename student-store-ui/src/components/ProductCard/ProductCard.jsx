@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./ProductCard.css";
 import { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 export default function ProductCard({
   product,
   productId,
@@ -12,6 +12,10 @@ export default function ProductCard({
   showDescription,
   cardId,
 }) {
+  // const handleProductClick = () => {
+  //   <Link className="product-details" id="product-details-link" to="/products/:productId" />
+  // }
+
   useEffect(() => {
     console.log(cardId);
     console.log(shoppingCart[cardId]);
@@ -27,9 +31,19 @@ export default function ProductCard({
     return setShoppingCart(cardQuantity - 1);
   };
 
-  return ( 
+  return (
     <div className="product-card">
-      <img className="product-image" src={product.image} alt={product.title} />
+      <Link
+        className="product-details"
+        id="product-details-link"
+        to={"/products/" + cardId}
+      >
+        <img
+          className="product-image"
+          src={product.image}
+          alt={product.title}
+        />
+      </Link>
       <p className="product-name">{product.name}</p>
       <p className="product-price">${product.price}</p>
       {showDescription ? (
