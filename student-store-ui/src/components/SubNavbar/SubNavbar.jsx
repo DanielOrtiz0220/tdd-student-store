@@ -1,42 +1,67 @@
 import * as React from "react";
 import "./SubNavbar.css";
+import { useState } from "react";
 
-export default function SubNavbar() {
+export default function SubNavbar({ search, setSearch, setCategory }) {
+  const [active, setActive] = useState("1");
+
+  const handleClick = (event) => {
+    setCategory(event.target.name);
+    setActive(event.target.id);
+  };
   return (
-    <nav class="sub-navbar">
-      <div class="content">
-        <div class="row">
-          <div class="search-bar">
-            <input type="text" name="search" placeholder="Search" value="" />
-            <i class="material-icons">search</i>
+    <nav className="sub-navbar">
+      <div className="content">
+        <div className="row">
+          <div className="search-bar">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search"
+              value={search}
+              onChange={(event) => {
+                setSearchInput(event.target.value);
+              }}
+            />
+            <i className="material-icons">search</i>
           </div>
-          <div class="links">
-            <span class="help">
-              <i class="material-icons">help</i>Help
+          <div className="links">
+            <span className="help">
+              <i className="material-icons">help</i>Help
             </span>
-            <div class="cart">
+            <div className="cart">
               <a href="/">
-                My Cart<i class="material-icons">shopping_cart</i>
+                My Cart<i className="material-icons">shopping_cart</i>
               </a>
             </div>
           </div>
         </div>
-        <div class="row">
-          <ul class="category-menu open">
-            <li class="is-active">
-              <button>All Categories</button>
+        <div className="row">
+          <ul className="category-menu">
+            <li className={active === "1" ? "active" : ""}>
+              <button onClick={handleClick} id={"1"} name="">
+                All Categories
+              </button>
             </li>
-            <li class="">
-              <button>Clothing</button>
+            <li className={active === "2" ? "active" : ""}>
+              <button onClick={handleClick} id={"2"} name="clothing">
+                Clothing
+              </button>
             </li>
-            <li class="">
-              <button>Food</button>
+            <li className={active === "3" ? "active" : ""}>
+              <button onClick={handleClick} id={"3"} name="food">
+                Food
+              </button>
             </li>
-            <li class="">
-              <button>Accessories</button>
+            <li className={active === "4" ? "active" : ""}>
+              <button onClick={handleClick} id={"4"} name="accessories">
+                Accessories
+              </button>
             </li>
-            <li class="">
-              <button>Tech</button>
+            <li className={active === "5" ? "active" : ""}>
+              <button onClick={handleClick} id={"5"} name="tech">
+                Tech
+              </button>
             </li>
           </ul>
         </div>

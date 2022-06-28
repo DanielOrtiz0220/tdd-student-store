@@ -5,13 +5,13 @@ import { useEffect } from "react";
 
 export default function ProductGrid({
   products,
-  handleAddItemToCart,
-  handleRemoveItemToCart,
-  shoppingCart,
-  setShoppingCart,
+  addAmountOfProduct,
+  subAmountOfProduct,
+  subtotal,
+  setSubtotal,
 }) {
   useEffect(() => {
-    console.log(shoppingCart);
+    console.log(products);
   }, []);
   return (
     <div className="product-grid">
@@ -21,9 +21,11 @@ export default function ProductGrid({
             product={item}
             key={idx}
             showDescription={true}
-            shoppingCart={shoppingCart}
-            setShoppingCart={setShoppingCart}
             cardId={idx}
+            addAmountOfProduct={addAmountOfProduct}
+            subAmountOfProduct={subAmountOfProduct}
+            subtoral={subtotal}
+            setSubtotal={setSubtotal}
           />
         );
       })}

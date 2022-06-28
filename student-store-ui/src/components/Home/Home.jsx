@@ -13,6 +13,13 @@ export default function Home({
   setIsOpen,
   shoppingCart,
   setShoppingCart,
+  addAmountOfProduct,
+  subAmountOfProduct,
+  subtotal,
+  setSubtotal,
+  search,
+  setSearch,
+  setCategory,
 }) {
   // function handleClick() {
   //   setIsOpen(!isOpen);
@@ -21,13 +28,26 @@ export default function Home({
   return (
     <div className="home">
       <Navbar /> 
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Sidebar
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        products={products}
+        setProducts={setProducts}
+        subtotal={subtotal}
+        setSubtotal={setSubtotal}
+      />
       <Hero />
-      <SubNavbar />
+      <SubNavbar
+        search={search}
+        setSearch={setSearch}
+        setCategory={setCategory}
+      />
       <ProductGrid
         products={products}
-        shoppingCart={shoppingCart}
-        setShoppingCart={setShoppingCart}
+        addAmountOfProduct={addAmountOfProduct}
+        subAmountOfProduct={subAmountOfProduct}
+        subtotal={subtotal}
+        setSubtotal={setSubtotal}
       />
       <p>Footer</p>
     </div>
