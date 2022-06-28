@@ -23,7 +23,7 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
 
-  const results = products.filter((product) => {
+  const filtered_products = products.filter((product) => {
     return (
       product.name.toLowerCase().includes(search) &&
       product.category.includes(category) // review this
@@ -90,10 +90,10 @@ export default function App() {
               path="/"
               element={
                 <Home
-                  products={results}
+                  products={filtered_products}
                   setProducts={setProducts}
                   search={search}
-                  SetSearch={setSearch}
+                  setSearch={setSearch}
                   subtotal={subtotal}
                   setSubtotal={setSubtotal}
                   isOpen={isOpen}

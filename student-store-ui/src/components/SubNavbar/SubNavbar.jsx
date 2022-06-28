@@ -9,6 +9,10 @@ export default function SubNavbar({ search, setSearch, setCategory }) {
     setCategory(event.target.name);
     setActive(event.target.id);
   };
+
+  function handleOnChange(event){
+    setSearch(event.target.value)
+  }
   return (
     <nav className="sub-navbar">
       <div className="content">
@@ -19,9 +23,7 @@ export default function SubNavbar({ search, setSearch, setCategory }) {
               name="search"
               placeholder="Search"
               value={search}
-              onChange={(event) => {
-                setSearchInput(event.target.value);
-              }}
+              onChange={handleOnChange}
             />
             <i className="material-icons">search</i>
           </div>
