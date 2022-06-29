@@ -52,11 +52,11 @@ export default function ProductCard({
       ) : null}
 
       <div className="add-sub-btns">
-        <button className="subtract-item" onClick={addQuantity}>
+        <button className="subtract-item" onClick={subQuantity}>
           <i className="material-icons-md-48">➖</i>
         </button>
         <p>{buyingAmount}</p>
-        <button className="add-item" onClick={subQuantity}>
+        <button className="add-item" onClick={addQuantity}>
           <i className="material-icons-md-48">➕</i>
         </button>
       </div>

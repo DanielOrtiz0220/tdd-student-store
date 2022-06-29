@@ -3,8 +3,13 @@ import "./Sidebar.css";
 import { useState } from "react";
 import OpenSidebar from "../OpenSidebar/OpenSidebar";
 
-export default function Sidebar({isOpen, setIsOpen}) {
-  //const [openState, setOpenState] = useState(false);
+export default function Sidebar({
+  products,
+  subtotal,
+  setSubtotal,
+  setProducts,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen((s) => !s);
@@ -12,7 +17,16 @@ export default function Sidebar({isOpen, setIsOpen}) {
 
   function renderSidebar() {
     if (isOpen) {
-      return <OpenSidebar setIsOpen={setIsOpen} />;
+      return (
+        <OpenSidebar
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+          products={products}
+          setProducts={setProducts}
+          subtotal={subtotal}
+          setSubtotal={setSubtotal}
+        />
+      );
     }
 
     return (
