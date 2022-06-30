@@ -30,27 +30,9 @@ export default function App() {
     );
   });
 
-  // useEffect(() => {
-  //   console.log("before api");
-  //   axios.get("https://codepath-store-api.herokuapp.com/store").then((res) => {
-  //     setProducts(res.data.products);
-  //   });
-  //   console.log(products);
-  // }, []);
-
-  /* Use this when I want to add a product to the cart (maybe)*/
-  // useEffect(() => {
-  //   console.log("before api");
-  //   axios.get("https://codepath-store-api.herokuapp.com/store")
-  //     .then(res => {
-  //       setProducts(res.data)
-  //     })
-  //   console.log("after api " + products);
-  // }, [])
-
   function getProductDetails() {
     axios
-      .get("https://codepath-store-api.herokuapp.com/store")
+      .get("http://localhost:3001/store")
       .then((response) => {
         // handle success
         response.data.products.forEach((product) => {
