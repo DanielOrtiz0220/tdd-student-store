@@ -14,14 +14,33 @@ import AboutUs from "../AboutUs/AboutUs";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-  const [isFetching, setIsFetching] = useState(0);
-  const [error, setError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState(null);
   const [subtotal, setSubtotal] = useState(0);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [orderObj, setOrderObj] = useState({
+    orderId: 3,
+    user: {
+      name: "",
+      email: "",
+    },
+    shoppingCart: [],
+    total: 0,
+    createdAt: 0, // (format : "12:10:00 PST")
+  });
+
+  // const orderObj = {
+  //   "orderId": 3,
+  //   "user": {
+  //   "name": "",
+  //   "email": ""
+  //   },
+  //   "shoppingCart": [],
+  //   "total": 0,
+  //   "createdAt": 0  // (format : "12:10:00 PST")
+  //   }
 
   const filtered_products = products.filter((product) => {
     return (
@@ -43,7 +62,7 @@ export default function App() {
       })
       .catch((error) => {
         // handle error
-        console.log(error);
+        error;
       });
   }
 
@@ -85,6 +104,8 @@ export default function App() {
                   setCategory={setCategory}
                   shoppingCart={shoppingCart}
                   setShoppingCart={setShoppingCart}
+                  orderObj={orderObj}
+                  setOrderObj={setOrderObj}
                 />
               }
             />

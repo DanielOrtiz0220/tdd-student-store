@@ -10,9 +10,9 @@ export default function ProductGrid({
   subtotal,
   setSubtotal,
 }) {
-  useEffect(() => {
-    console.log(products);
-  }, []);
+  // useEffect(() => {
+  //   (products);
+  // }, []);
   return (
     <div className="product-grid">
       {products.map((item, idx) => {
@@ -24,7 +24,7 @@ export default function ProductGrid({
             cardId={idx}
             addAmountOfProduct={addAmountOfProduct}
             subAmountOfProduct={subAmountOfProduct}
-            subtoral={subtotal}
+            subtotal={subtotal}
             setSubtotal={setSubtotal}
           />
         );

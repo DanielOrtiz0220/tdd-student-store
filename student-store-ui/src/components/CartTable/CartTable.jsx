@@ -3,7 +3,11 @@ import ProductRow from "../ProductRow/ProductRow";
 import Receipt from "../Receipt/Receipt";
 import "./CartTable.css";
 
-function CartTable({ products, subtotal, setSubtotal }) {
+function CartTable({ products, subtotal, setSubtotal, orderObj, setOrderObj }) {
+  // useEffect(() => {
+  //   (subtotal);
+  // }, [subtotal]);
+
   return (
     <div className="CartTable">
       <div className="header">
@@ -14,6 +18,7 @@ function CartTable({ products, subtotal, setSubtotal }) {
           <span className="center">Cost</span>
         </div>
         {products.map((product, idx) => {
+          // setOrderObj({shoppingCart:[...{id: product.id, amount: product.amount}]})
           return (
             <ProductRow
               key={idx}

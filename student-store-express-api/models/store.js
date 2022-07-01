@@ -6,18 +6,26 @@ class Store {
     return products;
   }
 
-  static async fetchTransactionById(transactionId) {
+  static fetchProductById(productId) {
     // fetch a single transaction
-    const transaction = storage
-      .get("transactions")
-      .find({ id: Number(transactionId) })
-      .value();
-    return transaction;
+    const products = storage.get("products").value();
+    const product = products[productId - 1];
+    return product;
+  }
+
+  static createCart(cart, orderId) {
+    console.log("Creating order...");
+
+    const purchases = storage.get("purchases");
+    purchases.push(cart).write(); //review this line
+  }
+
+  static receipt(orderId = 1) {
+    console.log(storage.get("purchases").value()[orderId - 1]);
+    const results = storage.get("purchases");
+
+    return results[0];
   }
 }
 
-module.exports = Store
-
-// class store {
-//   static;
-// }
+module.exports = Store;

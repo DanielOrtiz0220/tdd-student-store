@@ -6,20 +6,41 @@ function CheckoutForm({
   setFormTwoValue,
   formOneValue,
   formTwoValue,
+  orderObj,
+  setOrderObj
 }) {
   const [checkboxChecked, setCheckboxchecked] = useState(false);
   const [checkoutButtonPressed, setCheckoutButtonPressed] = useState(false);
+    
+    
 
   //Every time form one or form two update, it checks if both are filled out. If they are, then you can check out. Otherwise, you cannot.
-  useEffect(() => {
+  useEffect(async () => {
     if (
       formOneValue.length > 0 &&
       formTwoValue.length > 0 &&
       checkboxChecked &&
       checkoutButtonPressed
     ) {
+      // setOrderObj({user:{name: formOneValue, email: formTwoValue}, total:subtot})
+
+      // axios
+      //   .post(`/store/receipt/3`)
+      //   .then((response) => {
+      //     // handle success
+      //     response.data.products.forEach((product) => {
+      //       product.amount = 0;
+      //     });
+      //     let productData = response.data.products;
+      //     setProducts(productData); //Setting the products object to API products.
+      //   })
+      //   .catch((error) => {
+      //     // handle error
+      //     error;
+      //   });
+
       setCheckedOut(true);
-      console.log("ALL TRUE");
+      ("ALL TRUE");
     } else {
       setCheckedOut(false);
       ("ALL FALSE");

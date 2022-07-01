@@ -20,11 +20,9 @@ export default function Home({
   search,
   setSearch,
   setCategory,
+  orderObj,
+  setOrderObj
 }) {
-  // function handleClick() {
-  //   setIsOpen(!isOpen);
-  // }
-
   return (
     <div className="home">
       <Navbar /> 
@@ -35,6 +33,8 @@ export default function Home({
         setProducts={setProducts}
         subtotal={subtotal}
         setSubtotal={setSubtotal}
+        orderObj = {orderObj}
+        setOrderObj = {setOrderObj}
       />
       <Hero />
       <SubNavbar

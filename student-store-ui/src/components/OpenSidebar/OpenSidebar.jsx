@@ -15,6 +15,8 @@ export default function OpenSidebar({
   setProducts,
   subtotal,
   setSubtotal,
+  orderObj,
+  setOrderObj
 }) {
   const filtered_products = products.filter((product) => product.amount > 0);
 
@@ -37,6 +39,8 @@ export default function OpenSidebar({
               products={products}
               subtotal={subtotal}
               setSubtotal={setSubtotal}
+              orderObj = {orderObj}
+              setOrderObj = {setOrderObj}
             />
             <CheckoutForm
               setCheckedOut={setCheckedOut}
@@ -44,6 +48,8 @@ export default function OpenSidebar({
               setFormTwoValue={setFormTwoValue}
               formOneValue={formOneValue}
               formTwoValue={formTwoValue}
+              orderObj = {orderObj}
+              setOrderObj = {setOrderObj}
             />
             <CheckoutSuccess
               filtered_products={filtered_products}

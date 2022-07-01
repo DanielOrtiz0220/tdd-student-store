@@ -16,16 +16,16 @@ export default function ProductDetail({
   // using param created at the route component in app.jsx
   let productId = params.productId;
 
-  const productName = products[productId].name;
-  const productPrice = products[productId].price;
-  const productDescription = products[productId].description;
-  const productImage = products[productId].image;
-  const productTitle = products[productId].title;
+  const productName = products[productId - 1].name;
+  const productPrice = products[productId - 1].price;
+  const productDescription = products[productId - 1].description;
+  const productImage = products[productId - 1].image;
+  const productTitle = products[productId - 1].title;
   const showDescription = 1;
 
   useEffect(() => {
-    console.log(productName);
-    // console.log(productDetailsUnit)
+    // (productName);
+    // (productDetailsUnit)
   }, []);
 
   return (

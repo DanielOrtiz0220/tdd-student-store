@@ -145,5 +145,60 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "orderId": 1,
+      "user": {
+        "name": "Daniel",
+        "email": "daniel@salesforce.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 3
+        },
+        {
+          "id": 2,
+          "amount": 5
+        },
+        {
+          "id": 3,
+          "amount": 7
+        },
+        {
+          "id": 4,
+          "amount": 9
+        }
+      ],
+      "total": "$9999",
+      "createdAt": "12:10:00 PST"
+    },
+    {
+      "orderId": 2,
+      "user": {
+        "name": "Irem",
+        "email": "Irem@salesforce.com"
+      },
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 3
+        },
+        {
+          "id": 2,
+          "amount": 5
+        },
+        {
+          "id": 3,
+          "amount": 7
+        },
+        {
+          "id": 4,
+          "amount": 9
+        }
+      ],
+      "total": "$9999",
+      "createdAt": "12:10:00 PST"
+    }
+  ]
 }

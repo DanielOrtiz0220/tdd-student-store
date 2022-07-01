@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./ProductRow.css";
 
-function ProductRow({ name, amount, price }) {
+function ProductRow({ name, amount, price,}) {
   var USDformatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
   let cost = price * amount;
+
   return (
-    <div class="product-row">
-      <span class="flex-2 cart-product-name">{name}</span>
-      <span class="center cart-product-quantity">{amount}</span>
-      <span class="center cart-product-price">
+    <div className="product-row">
+      <span className="flex-2 cart-product-name">{name}</span>
+      <span className="center cart-product-quantity">{amount}</span>
+      <span className="center cart-product-price">
         {USDformatter.format(price)}
       </span>
-      <span class="center cart-product-subtotal">
+      <span className="center cart-product-subtotal">
         {USDformatter.format(cost)}
       </span>
     </div>
